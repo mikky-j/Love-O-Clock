@@ -1,0 +1,442 @@
+* {
+  font-family: "Poppins", sans-serif;
+  /* transition-timing-function: ; */
+}
+
+:root {
+  --bg-primary: #ffaead;
+  --border-color: #ced4da;
+  --border-active-color: #f36b69;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: black;
+}
+
+.bg-danger-subtle {
+  background-color: var(--bg-primary) !important;
+  color: white;
+}
+
+/*---------------- NAVBAR SECTION ----------------*/
+nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(0.5rem);
+}
+
+nav ul.navbar-nav {
+  font-size: 1.2rem;
+}
+
+#close-btn {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  box-shadow: none;
+  /* padding: 0 !important; */
+}
+
+nav #close-btn span {
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  position: relative;
+}
+nav #close-btn span:nth-child(1) {
+  width: 50px;
+}
+nav #close-btn span:nth-child(2) {
+  width: 30px;
+}
+nav #close-btn span:nth-child(3) {
+  width: 15px;
+}
+
+button#close-btn.active {
+  padding: 0 !important;
+}
+
+button#close-btn.active span:nth-child(1) {
+  position: absolute;
+  width: 30px;
+  top: 18px;
+  left: 11px;
+  /* transform: translate(-50%, -50%); */
+  background-color: var(--bg-primary);
+  /* background-color: blue; */
+  transform: rotate(135deg);
+}
+button#close-btn.active span:nth-child(2) {
+  /* position: absolute; */
+  /* opacity: 0; */
+  display: none !important;
+}
+button#close-btn.active span:nth-child(3) {
+  position: absolute;
+  left: 11px;
+  bottom: 18px;
+  /* transform: translate(-25%, -25%); */
+  /* bottom: 8px; */
+  width: 30px;
+  /* transform: translate(-50%, -50%); */
+  background-color: var(--bg-primary);
+  /* background-color: green; */
+  transform: rotate(-135deg);
+}
+
+/*---------------- HERO SECTION ----------------*/
+section#hero {
+  padding-top: 10rem;
+  position: relative;
+  overflow: hidden;
+}
+section#hero div.email-box {
+  width: 60%;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  height: 3.5rem;
+}
+
+section#hero div.main-message {
+  z-index: 5;
+}
+
+section#hero div.email-box input {
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  outline: none;
+  border-radius: 30px 0 0 30px;
+  border: 1px solid var(--border-color);
+  border-right-color: transparent;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+section#hero div.email-box input::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+section#hero div.email-box input:focus {
+  border-color: var(--border-active-color);
+}
+
+section#hero div.email-box button {
+  border-radius: 0 30px 30px 0;
+}
+
+section#celebrity div.email-box input {
+  width: 70%;
+  /* height: 100%; */
+  padding: 15px;
+  outline: none;
+  border-radius: 30px 0 0 30px;
+  border: 1px solid var(--border-color);
+  border-right-color: transparent;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+section#celebrity div.email-box {
+  /* background-color: red; */
+  max-width: 60%;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  height: 3.5rem;
+}
+
+section#celebrity div.email-box input::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+section#celebrity div.email-box input:focus {
+  border-color: var(--border-active-color);
+}
+
+section#celebrity div.email-box button {
+  border-radius: 0 30px 30px 0;
+}
+
+section#hero div.overlay {
+  display: none;
+}
+
+section#hero img {
+  position: relative;
+  height: 575px;
+  z-index: 1;
+}
+
+section#hero div.image-background::before,
+section#hero div.image-background::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 5px solid var(--bg-primary);
+  animation: grow 3s linear infinite;
+}
+
+section#hero div.image-background::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    height: 600px;
+    width: 600px;
+  }
+}
+
+/*---------------- SCREENSHOT SECTION ----------------*/
+section#screenshots {
+  color: white;
+  background-image: url("assets/Rectangle\ 74.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* section#screenshots div.box {
+  width: 100px;
+  background-color: red;
+  height: 300px;
+} */
+
+section#screenshots div.owl-dots button.active span {
+  background-color: var(--border-active-color);
+}
+
+section#features div.feature > div {
+  padding: 10px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+section#features div.feature:hover > div {
+  background-color: white;
+}
+
+section#invite div.image-background img {
+  height: 27rem;
+}
+
+section#invite img.messages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px !important;
+  height: 33px !important;
+}
+
+section#invite img.messages:nth-child(1) {
+  top: 15%;
+  left: calc(50% + 22px);
+}
+
+section#invite img.messages:nth-child(2) {
+  top: 30%;
+  left: 32%;
+}
+
+section#invite img.messages:nth-child(3) {
+  width: 100px !important;
+  height: 50px !important;
+  top: 45%;
+  left: 50%;
+}
+
+section#invite img.messages:nth-child(4) {
+  width: 100px !important;
+  height: 50px !important;
+  top: 60%;
+  left: 32%;
+}
+
+section#communication div.image-background {
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+section#communication div.image-background img {
+  height: 35rem !important;
+}
+
+section#communication div.image-background::before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 50%;
+  left: 125px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  opacity: 0.2;
+  border: 5px solid var(--bg-primary);
+  /* animation: grow 3s linear infinite; */
+}
+
+section#communication div.image-background::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 50%;
+  left: 125px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transform: translate(100px, 100px);
+  /* transform: scale(0.5); */
+  opacity: 0.2;
+  /* background-color: red; */
+  border: 3px solid var(--bg-primary);
+  /* animation: grow 3s linear infinite; */
+}
+
+section#how div.box {
+  width: 70px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-primary);
+  height: 70px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#results div.card-img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-top: -50px;
+}
+img.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 100ms ease-in-out;
+  z-index: 1;
+
+  /* animation: fade 6100ms ease-in-out infinite;
+  animation-direction: forward; */
+}
+section#celebrity img.main-image {
+  position: relative;
+  margin-top: 200px;
+  /* background-color: blue; */
+  /* z-index: 1; */
+}
+section#timer div.email-box input {
+  outline: none;
+  border: 1px solid var(--border-color);
+  border-right-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+section#timer div.email-box input:focus {
+  border-color: var(--border-active-color) !important;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+/* FOR MEDIUM SCREENS DOWN */
+@media (max-width: 991px) {
+  section#hero {
+    padding-top: 6rem;
+  }
+  section#hero div.container div {
+    display: grid;
+  }
+
+  section#hero div.container div.row > div {
+    grid-column: 1;
+    grid-row: 1;
+    color: white;
+  }
+  nav {
+    background-color: transparent;
+    /* backdrop-filter: none; */
+  }
+
+  nav.active {
+    background-color: rgba(0, 0, 0, 0.89);
+  }
+
+  nav a {
+    color: white !important;
+  }
+
+  section#hero div.overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.788);
+  }
+  section#hero div.email-box {
+    width: 100%;
+    height: auto;
+  }
+  section#celebrity div.email-box {
+    /* background-color: red; */
+    max-width: 100%;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    height: auto;
+  }
+  section#celebrity div.email-box input {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    /* background-color: rgba(255, 255, 255, 0.164); */
+    width: 80%;
+    border: none;
+    /* color: white; */
+  }
+  section#celebrity div.email-box button {
+    width: 20%;
+  }
+
+  section#hero div.email-box input {
+    padding: 0 20px;
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.164);
+    width: 80%;
+    border: none;
+    color: white;
+  }
+  section#hero div.email-box button {
+    width: 20%;
+  }
+  section#communication div.image-background::after,
+  section#communication div.image-background::before {
+    left: 40px;
+  }
+}
